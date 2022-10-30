@@ -4,6 +4,10 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -14,6 +18,16 @@ import java.io.FileWriter;
  * @author ANDRES
  */
 public class GenerarDatos {
+    
+    private String nombreArchivo = "pruebaF.txt";
+
+    public String getNombreArchivo() {
+        return nombreArchivo;
+    }
+
+    public void setNombreArchivo(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
+    }
 
     public void generarDatos(int n) {
         try {
@@ -43,15 +57,13 @@ public class GenerarDatos {
         FileReader fr = null;
         BufferedReader br = null;
         try {
-            archivo = new File("pruebaF.txt");
+            archivo = new File(nombreArchivo);
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
-            // Lectura del fichero
             String linea;
             int j = 0;
             while ((linea = br.readLine()) != null) {
                 arr[j] = Integer.parseInt(linea);
-                //System.out.println(linea);
                 j++;
             }
         } catch (Exception e) {
@@ -66,5 +78,11 @@ public class GenerarDatos {
             }
         }
         return arr;
+    }
+    
+    public int tamArr(String archivo) throws IOException{
+        Path file = Paths.get(archivo);
+        long count = Files.lines(file).count();
+        return (int) count;
     }
 }
