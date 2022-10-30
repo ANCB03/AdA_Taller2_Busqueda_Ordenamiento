@@ -9,13 +9,13 @@ import java.io.FileWriter;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author ANDRES
  */
 public class GenerarDatos {
-    public void generarDatos(int n){
+
+    public void generarDatos(int n) {
         try {
             String ruta = "pruebaF.txt";
             File file = new File(ruta);
@@ -27,24 +27,22 @@ public class GenerarDatos {
             BufferedWriter bw = new BufferedWriter(fw);
             for (int i = 0; i < n; i++) {
                 int valorEntero = (int) Math.floor(Math.random() * (10000 - 0 + 1) + 0);
-                bw.write(String.valueOf(valorEntero) );
-                if(i != n-1){
+                bw.write(String.valueOf(valorEntero));
+                if (i != n - 1) {
                     bw.write("\n");
                 }
-                //System.out.println(valorEntero);
             }
-            //bw.write(contenido);
             bw.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    public int[] llenarArreglo(int arr[]){
+
+    public int[] llenarArreglo(int arr[]) {
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
-        try{
+        try {
             archivo = new File("pruebaF.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
@@ -52,22 +50,21 @@ public class GenerarDatos {
             String linea;
             int j = 0;
             while ((linea = br.readLine()) != null) {
-                arr[j]=Integer.parseInt(linea);
+                arr[j] = Integer.parseInt(linea);
                 //System.out.println(linea);
-                j++;   
+                j++;
             }
-            
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally{
-         try{                    
-            if( null != fr ){   
-               fr.close();     
-            }                  
-         }catch (Exception e2){ 
-            e2.printStackTrace();
-         }
-      }
+        } finally {
+            try {
+                if (null != fr) {
+                    fr.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
         return arr;
     }
 }
