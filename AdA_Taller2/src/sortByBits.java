@@ -9,7 +9,7 @@ import java.util.Arrays;
  *
  * @author ANDRES
  */
-public class sortByBits {
+public class SortByBits {
 
     public int[] sortByBits(int[] arr) {
         for (int i = 0; i < arr.length; i++) {//1+1+1 (1+1)

@@ -80,7 +80,7 @@ public class GenerarDatos {
         return arr;
     }
     
-    public int tamArr(String archivo) throws IOException{
+    public int tamArr(String archivo) throws IOException{//No se hizo uso de este método
         Path file = Paths.get(archivo);
         long count = Files.lines(file).count();
         return (int) count;
