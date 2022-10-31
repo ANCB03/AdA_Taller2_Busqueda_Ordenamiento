@@ -9,7 +9,6 @@ También se hizo una aplicación que permite probar el algoritmo con datos aleat
 ### Instrucciones de pruebas desde CMD
 
   1. cd “direccion de la carpeta del proyecto (src)” 
-![img](https://drive.google.com/file/d/1-DTajXdxdTFKd-JFywQQ5LDUKhfpEzHM/view?usp=share_link)
   2. javac -d “direccion de la carpeta COMPILADO que se encuentra junto al proyecto” MainSortByBits.java
   3. cd “direccion de la carpeta del paso 2”
   4. java MainSortByBits “número de datos”
