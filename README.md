@@ -5,6 +5,10 @@ También se hizo una aplicación que permite probar el algoritmo con datos aleat
 
  - 1 <= arr.length <= 500
  - 0 <= arr[i] <= 10^4
+ ### complejidad
+ - O(n log(n))
+ - f(n)=11n + n log n+1 
+
  
 ### Instrucciones de pruebas desde CMD
 
